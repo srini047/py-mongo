@@ -1,5 +1,8 @@
-import pymongo
+import os
+# from decouple import config
 from pymongo import MongoClient
 
-client = MongoClient()
+DB_URL = os.getenv("DB_URL")
+
+client = MongoClient(DB_URL)
 db = client['db']
